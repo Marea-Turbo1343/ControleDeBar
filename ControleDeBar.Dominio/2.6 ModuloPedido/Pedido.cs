@@ -1,5 +1,6 @@
 ﻿using ControleDeBar.Dominio._2._1_Compartilhado;
 using ControleDeBar.Dominio._2._4_ModuloGarcom;
+using ControleDeBar.Dominio._2._7_ModuloProduto;
 
 
 namespace ControleDeBar.Dominio._2._6_ModuloPedido

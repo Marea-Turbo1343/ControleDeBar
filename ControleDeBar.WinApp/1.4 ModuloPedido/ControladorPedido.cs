@@ -1,10 +1,6 @@
-﻿using ControleDeBar.Infra.Orm._3._1._1_Compartilhado;
+﻿using ControleDeBar.Dominio._2._6_ModuloPedido;
+using ControleDeBar.Infra.Orm._3._1._1_Compartilhado;
 using ControleDeBar.WinApp._1._1_Compartilhado;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ControleDeBar.WinApp._1._4_ModuloPedido
 {
