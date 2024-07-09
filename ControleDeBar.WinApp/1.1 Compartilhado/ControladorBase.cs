@@ -75,8 +75,6 @@ namespace ControleDeBar.WinApp._1._1_Compartilhado
             CarregarRegistros();
             CarregarMensagem(materia, texto);
         }
-
-
         #endregion
     }
 }
