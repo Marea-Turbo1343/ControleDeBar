@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="2.3 ModuloConta\" />
-    <Folder Include="2.5 ModuloMesa\" />
-  </ItemGroup>
-
 </Project>

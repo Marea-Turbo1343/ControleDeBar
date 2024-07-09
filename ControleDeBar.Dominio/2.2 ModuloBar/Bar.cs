@@ -1,8 +1,7 @@
 ﻿using ControleDeBar.Dominio._2._1_Compartilhado;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using ControleDeBar.Dominio._2._4_ModuloGarcom;
+using ControleDeBar.Dominio._2._5_ModuloMesa;
+using ControleDeBar.Dominio._2._7_ModuloProduto;
 
 namespace ControleDeBar.Dominio
 {
