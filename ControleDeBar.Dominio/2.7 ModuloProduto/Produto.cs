@@ -1,10 +1,5 @@
 ﻿using ControleDeBar.Dominio._2._1_Compartilhado.Extensions;
 using ControleDeBar.Dominio._2._1_Compartilhado;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ControleDeBar.Dominio._2._7_ModuloProduto
 {
