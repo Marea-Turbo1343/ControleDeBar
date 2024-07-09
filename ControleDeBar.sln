@@ -10,12 +10,18 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Infraestrutura", "3. Infraestrutura", "{CC00371E-017D-4EB2-BEB2-70D1359DCAE6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleDeBar.WinApp", "ControleDeBar.WinApp\ControleDeBar.WinApp.csproj", "{3F316393-70D2-40A2-83B9-A7C9455D32DC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F4EC034E-D07C-48F0-AAFB-D3FB3DB4549C} = {F4EC034E-D07C-48F0-AAFB-D3FB3DB4549C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleDeBar.Dominio", "ControleDeBar.Dominio\ControleDeBar.Dominio.csproj", "{13F96CB2-AE35-4CA2-B6EE-66FABC367576}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1 ORM", "3.1 ORM", "{A4904B9E-3A25-42F3-8384-78D4D3183D16}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControleDeBar.Infra.Orm", "ControleDeBar.Infra.Orm\ControleDeBar.Infra.Orm.csproj", "{F4EC034E-D07C-48F0-AAFB-D3FB3DB4549C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{13F96CB2-AE35-4CA2-B6EE-66FABC367576} = {13F96CB2-AE35-4CA2-B6EE-66FABC367576}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

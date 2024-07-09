@@ -1,9 +1,4 @@
 ﻿using ControleDeBar.Dominio._2._1_Compartilhado;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ControleDeBar.WinApp._1._1_Compartilhado
 {

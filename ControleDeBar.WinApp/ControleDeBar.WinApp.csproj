@@ -9,14 +9,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="1.2 ModuloGarcom\" />
     <Folder Include="1.3 ModuloMesa\" />
     <Folder Include="1.4 ModuloPedido\" />
     <Folder Include="1.5 ModuloProduto\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ControleDeBar.Dominio\ControleDeBar.Dominio.csproj" />
+    <ProjectReference Include="..\ControleDeBar.Infra.Orm\ControleDeBar.Infra.Orm.csproj" />
   </ItemGroup>
 
 </Project>
