@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
-using System.Reflection.Emit;
+﻿using Microsoft.EntityFrameworkCore;
+using ControleDeBar.Dominio._2._4_ModuloGarcom;
+using ControleDeBar.Dominio._2._6_ModuloPedido;
+using ControleDeBar.Dominio._2._7_ModuloProduto;
 
 namespace ControleDeBar.Infra.Orm._3._1._1_Compartilhado
 {

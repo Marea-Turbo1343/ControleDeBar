@@ -1,4 +1,5 @@
 ﻿using ControleDeBar.Dominio._2._1_Compartilhado;
+using ControleDeBar.Dominio._2._1_Compartilhado.Extensions;
 
 namespace ControleDeBar.Dominio._2._4_ModuloGarcom
 {

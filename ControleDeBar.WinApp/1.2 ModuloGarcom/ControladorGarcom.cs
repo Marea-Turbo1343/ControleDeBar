@@ -1,6 +1,7 @@
 ﻿using ControleDeBar.Infra.Orm._3._1._1_Compartilhado;
 using ControleDeBar.Dominio._2._1_Compartilhado;
 using ControleDeBar.WinApp._1._1_Compartilhado;
+using ControleDeBar.Dominio._2._4_ModuloGarcom;
 
 
 namespace ControleDeBar.WinApp._1._2_ModuloGarcom

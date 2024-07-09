@@ -9,10 +9,7 @@
   <ItemGroup>
     <Folder Include="3.1.2 Migrations\" />
     <Folder Include="3.1.4 ModuloConta\" />
-    <Folder Include="3.1.5 ModuloGarcom\" />
     <Folder Include="3.1.6 ModuloMesa\" />
-    <Folder Include="3.1.7 ModuloPedido\" />
-    <Folder Include="3.1.8 ModuloProduto\" />
   </ItemGroup>
 
   <ItemGroup>

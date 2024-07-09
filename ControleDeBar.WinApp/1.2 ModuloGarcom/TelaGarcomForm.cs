@@ -24,8 +24,7 @@ namespace ControleDeBar.WinApp._1._2_ModuloGarcom
 
             if (garconsCadastrados.Count > 0)
                 txtId.Text = (garconsCadastrados.Last().Id + 1).ToString();
-            else 
-                txtId.Text = "1";
+            else txtId.Text = "1";
 
             this.garconsCadastrados = garconsCadastrados;
         }
