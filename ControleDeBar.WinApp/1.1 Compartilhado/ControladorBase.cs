@@ -23,7 +23,9 @@ namespace ControleDeBar.WinApp._1._1_Compartilhado
         public abstract void CarregarRegistros();
         protected void CarregarMensagem(EntidadeBase entidade, string texto)
         {
-            TelaPrincipalForm.Instancia.AtualizarRodape($"O registro \"{entidade}\" foi {texto} com sucesso!");
+            TelaPrincipalForm
+                .Instancia
+                .AtualizarRodape($"O registro \"{entidade}\" foi {texto} com sucesso!");
         }
         protected bool SemSeleção(EntidadeBase entidadeSelecionada)
         {

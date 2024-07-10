@@ -6,7 +6,7 @@ using ControleDeBar.Dominio._2._4_ModuloGarcom;
 
 namespace ControleDeBar.WinApp._1._2_ModuloGarcom
 {
-    public class ControladorGarcom(IRepositorioGarcom repositorioGarcom, ControleDeBarDbContext dbContext) : ControladorBase, IControladorGeraPedido
+    public class ControladorGarcom(IRepositorioGarcom repositorioGarcom, ControleDeBarDbContext dbContext) : ControladorBase
     {
         TabelaGarcomControl tabelaGarcom;
 
@@ -15,13 +15,12 @@ namespace ControleDeBar.WinApp._1._2_ModuloGarcom
         public override string ToolTipAdicionar { get => "Cadastrar um novo garçom"; }
         public override string ToolTipEditar { get => "Editar um garçom existente"; }
         public override string ToolTipExcluir { get => "Excluir um garçom existente"; }
-        public string ToolTipGerarPedido { get => "Cadastrar novo pedido"; }
         #endregion
 
         #region CRUD
         public override void Adicionar()
         {
-            TelaGarcomForm telaProduto = new([.. dbContext.Garcons]);
+            TelaGarcomForm telaProduto = new(dbContext);
             DialogResult resultado = telaProduto.ShowDialog();
 
             if (resultado != DialogResult.OK) return;
@@ -42,7 +41,7 @@ namespace ControleDeBar.WinApp._1._2_ModuloGarcom
 
             List<Garcom> disciplinasCadastradas = repositorioGarcom.SelecionarTodos();
 
-            TelaGarcomForm telaGarcom = new([.. dbContext.Garcons])
+            TelaGarcomForm telaGarcom = new(dbContext)
             {
                 Garcom = registroSelecionado
             };
@@ -79,6 +78,7 @@ namespace ControleDeBar.WinApp._1._2_ModuloGarcom
 
             return tabelaGarcom;
         }
-        public override void CarregarRegistros() => tabelaGarcom.AtualizarRegistros(repositorioGarcom.SelecionarTodos());
+        public override void CarregarRegistros()
+            => tabelaGarcom.AtualizarRegistros(repositorioGarcom.SelecionarTodos());
     }
 }

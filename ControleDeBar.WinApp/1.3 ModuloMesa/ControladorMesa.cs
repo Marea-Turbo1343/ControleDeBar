@@ -1,79 +1,85 @@
-﻿namespace ControleDeBar.WinApp._1._3_ModuloMesa
+﻿using ControleDeBar.Dominio._2._1_Compartilhado;
+using ControleDeBar.Dominio._2._5_ModuloMesa;
+using ControleDeBar.Infra.Orm._3._1._1_Compartilhado;
+using ControleDeBar.WinApp._1._1_Compartilhado;
+
+namespace ControleDeBar.WinApp._1._3_ModuloMesa
 {
-    /*    public class ControladorMesa(IRepositorioPedido repositorioPedido, ControleDeBarDbContext dbContext) : ControladorBase
+    public class ControladorMesa(IRepositorioMesa repositorioMesa, ControleDeBarDbContext dbContext) : ControladorBase, IControladorGeraPedido
+    {
+        TabelaMesaControl tabelaMesa;
+
+        #region ToolTips
+        public override string TipoCadastro { get => "Mesa"; }
+        public override string ToolTipAdicionar { get => "Cadastrar um novo mesa"; }
+        public override string ToolTipEditar { get => "Editar um mesa existente"; }
+        public override string ToolTipExcluir { get => "Excluir um mesa existente"; }
+        public string ToolTipGerarPedido { get => "Cadastrar um novo pedido"; }
+        public string ToolTipContaDaMesa { get => "Visualizar conta da mesa"; }
+        #endregion
+
+        #region CRUD
+        public override void Adicionar()
         {
-            TabelaPedidoControl tabelaPedido;
+            TelaMesaForm telaMesa = new(dbContext);
+            DialogResult resultado = telaMesa.ShowDialog();
 
-            #region ToolTips
-            public override string TipoCadastro { get => "Pedido"; }
-            public override string ToolTipAdicionar { get => "Cadastrar um novo pedido"; }
-            public override string ToolTipEditar { get => "Editar um pedido existente"; }
-            public override string ToolTipExcluir { get => "Excluir um pedido existente"; }
-            #endregion
+            if (resultado != DialogResult.OK) return;
 
-            #region CRUD
-            public override void Adicionar()
-            {
-                TelaPedidoForm telaPedido = new([.. dbContext.Pedidos]);
-                DialogResult resultado = telaPedido.ShowDialog();
+            Mesa novoRegistro = telaMesa.Mesa;
 
-                if (resultado != DialogResult.OK) return;
-
-                Pedido novoRegistro = telaPedido.Pedido;
-
-                RealizarAcao(
-                    () => repositorioPedido.Cadastrar(novoRegistro),
-                    novoRegistro, "cadastrado");
-            }
-            public override void Editar()
-            {
-                int idSelecionado = tabelaPedido.ObterRegistroSelecionado();
-
-                Pedido registroSelecionado = repositorioPedido.SelecionarPorId(idSelecionado);
-
-                if (SemSeleção(registroSelecionado)) return;
-
-                List<Pedido> disciplinasCadastradas = repositorioPedido.SelecionarTodos();
-
-                TelaPedidoForm telaPedido = new([.. dbContext.Pedidos])
-                {
-                    Pedido = registroSelecionado
-                };
-
-                DialogResult resultado = telaPedido.ShowDialog();
-
-                if (resultado != DialogResult.OK) return;
-
-                Pedido registroEditado = telaPedido.Pedido;
-
-                RealizarAcao(
-                    () => repositorioPedido.Editar(registroSelecionado.Id, registroEditado),
-                    registroEditado, "editado");
-            }
-            public override void Excluir()
-            {
-                int idSelecionado = tabelaPedido.ObterRegistroSelecionado();
-
-                Pedido registroSelecionado = repositorioPedido.SelecionarPorId(idSelecionado);
-
-                if (SemSeleção(registroSelecionado) || !DesejaRealmenteExcluir(registroSelecionado)) return;
-
-                RealizarAcao(
-                    () => repositorioPedido.Excluir(registroSelecionado.Id),
-                    registroSelecionado, "excluído");
-            }
-            #endregion
-
-            public override UserControl ObterListagem()
-            {
-                tabelaPedido ??= new();
-
-                CarregarRegistros();
-
-                return tabelaPedido;
-            }
-            public override void CarregarRegistros()
-                => tabelaPedido.AtualizarRegistros(repositorioPedido.SelecionarTodos());
+            RealizarAcao(
+                () => repositorioMesa.Cadastrar(novoRegistro),
+                novoRegistro, "cadastrado");
         }
-    */
+        public override void Editar()
+        {
+            int idSelecionado = tabelaMesa.ObterRegistroSelecionado();
+
+            Mesa registroSelecionado = repositorioMesa.SelecionarPorId(idSelecionado);
+
+            if (SemSeleção(registroSelecionado)) return;
+
+            List<Mesa> disciplinasCadastradas = repositorioMesa.SelecionarTodos();
+
+            TelaMesaForm telaMesa = new(dbContext)
+            {
+                Mesa = registroSelecionado
+            };
+
+            DialogResult resultado = telaMesa.ShowDialog();
+
+            if (resultado != DialogResult.OK) return;
+
+            Mesa registroEditado = telaMesa.Mesa;
+
+            RealizarAcao(
+                () => repositorioMesa.Editar(registroSelecionado.Id, registroEditado),
+                registroEditado, "editado");
+        }
+        public override void Excluir()
+        {
+            int idSelecionado = tabelaMesa.ObterRegistroSelecionado();
+
+            Mesa registroSelecionado = repositorioMesa.SelecionarPorId(idSelecionado);
+
+            if (SemSeleção(registroSelecionado) || !DesejaRealmenteExcluir(registroSelecionado)) return;
+
+            RealizarAcao(
+                () => repositorioMesa.Excluir(registroSelecionado.Id),
+                registroSelecionado, "excluído");
+        }
+        #endregion
+
+        public override UserControl ObterListagem()
+        {
+            tabelaMesa ??= new();
+
+            CarregarRegistros();
+
+            return tabelaMesa;
+        }
+        public override void CarregarRegistros()
+            => tabelaMesa.AtualizarRegistros(repositorioMesa.SelecionarTodos());
+    }
 }

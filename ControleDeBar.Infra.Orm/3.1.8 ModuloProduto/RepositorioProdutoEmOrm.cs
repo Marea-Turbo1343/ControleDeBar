@@ -14,7 +14,8 @@ namespace ControleDeBar.Infra.Orm._3._1._8_ModuloProduto
         {
             Produto produto = dbContext.Produtos.Find(id)!;
 
-            if (produto == null) return false;
+            if (produto == null)
+                return false;
 
             produto.AtualizarRegistro(produtoAtualizado);
 
@@ -27,7 +28,8 @@ namespace ControleDeBar.Infra.Orm._3._1._8_ModuloProduto
         {
             Produto produto = dbContext.Produtos.Find(id)!;
 
-            if (produto == null) return false;
+            if (produto == null)
+                return false;
 
             dbContext.Produtos.Remove(produto);
             dbContext.SaveChanges();
