@@ -1,4 +1,5 @@
-﻿using ControleDeBar.WinApp._1._1_Compartilhado.Extensions;
+﻿using ControleDeBar.Dominio._2._4_ModuloGarcom;
+using ControleDeBar.WinApp._1._1_Compartilhado.Extensions;
 
 
 namespace ControleDeBar.WinApp._1._2_ModuloGarcom
